@@ -1,0 +1,74 @@
+								EDUCATION PROJECT DESCRIPTIONS 
+
+The evaluation project is to build a training sales application using Java, starting with a console-based version 
+that could later be integrated into a web application. Key features include:
+
+  Displaying Courses: Allow all users to view available courses by category, keyword, 
+mode (in-person or online), with details like name, description, duration, and price.
+
+Shopping Cart: Users can add/remove courses to/from a shopping cart and place orders. 
+Unregistered users will be prompted to sign up and log in.
+
+Client and Order Management: Orders must be linked to clients with details like name, email, address, etc. 
+Users can place multiple orders for different clients.
+
+Admin Functionality: Admins can add, update, and remove courses and categories. 
+They can also view all orders placed by a specific client.
+
+Database: Use MariaDB to store all necessary data (clients, orders, products). 
+Implement restricted access rights and provide SQL scripts for the database.
+
+UML Diagrams: Include use case, class, and sequence diagrams.
+
+Design Layers: Implement a multi-layer architecture (Entity, DAO, Business, Application).
+    Design Layers: Implement a multi-layer architecture (Entity, DAO, Business, Application).
+
+==========================================================================================================
+
+BUILDING PROJECT PLAN
+
+
+Database Design:
+
+    Create tables for customers, clients, logged_users, products, and orders.
+    Each order links to both a client and a product.
+    Provide SQL scripts to create these tables.
+
+	In the SQL Script for Creating the Tables:
+	Customers: Basic details like name, email, address, and phone.
+	Logged Users: Stores login information. Links each user to a customer record.
+	Products: Represents available courses with attributes such as category, duration, mode (in-person or online), and price.
+	Orders: Contains details about each customer order.
+	Order Items: Manages individual items in an order, linking products to orders.
+
+UML Diagrams:
+
+    Class diagram: Define relationships between classes (Customer, Product, Order, etc.).
+    Sequence diagram: Show the process flow (e.g., adding items to cart, logging in, placing orders).
+
+	The class diagram will mirror this database structure. You will have classes like Customer, Product, Order, OrderItem, and LoggedUser. Here’s an overview of the relationships:
+
+    	Customer ↔ LoggedUser: One-to-one.
+   	Customer ↔ Order: One-to-many (a customer can have multiple orders).
+    	Order ↔ OrderItem: One-to-many (an order can have multiple items).
+   	OrderItem ↔ Product: One-to-one (an item represents one product).
+
+
+Java Project Structure:
+
+    Entity Layer: Create Java classes that match your database structure (e.g., Customer, Product, Order).
+    DAO Layer: Implement Data Access Objects (DAO) to handle database operations like inserting orders or fetching products.
+    Business Layer: Handle the logic for adding items to the cart, creating new users, and processing orders.
+    Application Layer: Console-based interface for interacting with the user.
+
+	Based on the database design, here’s how the definition of the corresponding Java classes:
+
+Main Features:
+
+    User Registration & Login: Allow users to register, log in, and view courses.
+    Cart Functionality: Users add products to their cart and place an order.
+    Admin Dashboard: Admins can manage products and view client orders.
+
+
+
+
