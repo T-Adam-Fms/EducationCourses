@@ -50,4 +50,4 @@ Ensuring Foreign Key Relationships
         order_items.order_id → orders.order_id
         order_items.product_id → products.product_id
 
-The OrderDAO and TestMain ensure the foreign keys (customer_id for orders, and product_id for order items) are correctly passed during inserts.
+
